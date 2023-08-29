@@ -8,7 +8,7 @@ public class CourseApplication {
 
 	public static void main(String[] args) {
 
-	//classe principal	SpringApplication.run(CourseApplication.class, args);
+		SpringApplication.run(CourseApplication.class, args);
 	}
 
 }
