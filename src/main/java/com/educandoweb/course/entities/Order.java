@@ -38,7 +38,7 @@ import jakarta.persistence.Table;
 		super();
 		this.id = id;
 		this.moment = moment;
-		client = client;
+		this.client = client;
 	}
 
 	public Long getId() {
