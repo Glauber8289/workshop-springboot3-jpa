@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
+import com.educandoweb.course.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -27,21 +28,22 @@ import jakarta.persistence.Table;
 	
 	@JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd' T 'HH:mm:ss'Z'", timezone="GMT")
 	private Instant moment;
-
+	private OrderStatus orderStatus;
 	
 	@ManyToOne
 	@JoinColumn(name="client_id")
 	private User client;
-
-	public Order() {
+	
+		public Order() {
 
 	}
-
-	public Order(Long id, Instant moment, User client) {
+	
+	public Order(Long id, Instant moment, OrderStatus orderStatus,User client) {
 		super();
 		this.id = id;
 		this.moment = moment;
 		this.client = client;
+		this.orderStatus = orderStatus;
 	}
 
 	public Long getId() {
@@ -66,6 +68,14 @@ import jakarta.persistence.Table;
 
 	public void setClient(User client) {
 		client = client;
+	}
+
+	public OrderStatus getOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		this.orderStatus = orderStatus;
 	}
 
 	@Override
