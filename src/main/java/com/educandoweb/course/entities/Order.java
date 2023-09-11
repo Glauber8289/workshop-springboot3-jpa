@@ -28,7 +28,7 @@ import jakarta.persistence.Table;
 	
 	@JsonFormat (shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd' T 'HH:mm:ss'Z'", timezone="GMT")
 	private Instant moment;
-	private OrderStatus orderStatus;
+	private Integer orderStatus;
 	
 	@ManyToOne
 	@JoinColumn(name="client_id")
@@ -43,7 +43,7 @@ import jakarta.persistence.Table;
 		this.id = id;
 		this.moment = moment;
 		this.client = client;
-		this.orderStatus = orderStatus;
+		setOrderStatus(orderStatus);
 	}
 
 	public Long getId() {
@@ -67,15 +67,18 @@ import jakarta.persistence.Table;
 	}
 
 	public void setClient(User client) {
-		client = client;
+		client = client;	
 	}
 
 	public OrderStatus getOrderStatus() {
-		return orderStatus;
+		return OrderStatus.valueOf(orderStatus);
+		
 	}
 
 	public void setOrderStatus(OrderStatus orderStatus) {
-		this.orderStatus = orderStatus;
+		if(orderStatus != null) {
+		this.orderStatus = orderStatus.getCode();
+		}
 	}
 
 	@Override
