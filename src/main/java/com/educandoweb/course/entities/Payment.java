@@ -6,6 +6,7 @@ import java.util.Objects;
 
 import com.educandoweb.course.entities.Order;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,7 +26,7 @@ import jakarta.persistence.Table;
 		private Long id;
 		
 		private Instant moment;
-         
+         @JsonIgnore
 		@OneToOne
 		@MapsId
 		private Order order;
