@@ -10,7 +10,7 @@ Objetivos
 * CRUD - Create, Retrieve, Update, Delete
 * Tratamento de exceções.
 
-# Esta e uma pequena demonstração das operações Create, Retrieve, Update, Delete utilizando o Postman.
+# Esta e uma pequena demonstração das operações Create, Retrieve, Update, Delete através de envios de requisições via HTTP utilizando o Postman.
 
 https://github.com/Glauber8289/workshop-springboot3-jpa/assets/107453279/13cf0533-bde5-482a-93df-9c3503fcc8dc
 
