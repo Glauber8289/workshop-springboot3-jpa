@@ -1,10 +1,13 @@
 package com.educandoweb.course.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,23 +17,23 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_Aluno")
-public class Aluno {
+public class Instrutor {
      
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 private Integer id_intrutor;
+	 @Column private Integer id_intrutor;
 	 private Integer rg;
 	 private String name;
 	 private Date nascimento;
 	 private Integer titulacao;
 	 
-	 @OneToMany (mappedBy =   "alunos")
-	  private Set<Turma> turmas = new HashSet<>();
-	 public Aluno () {
+	 @OneToMany (mappedBy =   "instrutor")
+	 private List <Turma> turmas = new ArrayList<>();
+	 public Instrutor () {
 		 
 	 }
 
-	public Aluno(Integer id, Integer rg, String name, Date nascimento, Integer titulacao) {
+	public Instrutor (Integer id, Integer rg, String name, Date nascimento, Integer titulacao) {
 		super();
 		this.id_intrutor = id;
 		this.rg = rg;

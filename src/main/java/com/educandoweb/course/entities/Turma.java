@@ -28,7 +28,7 @@ public class Turma {
 	  
 	  @ManyToOne
 	  @JoinColumn(name= "Id_Aluno", referencedColumnName = "id_intrutor")
-	  private List <Aluno> aluno = new ArrayList<>();
+	  private List <Instrutor> aluno = new ArrayList<>();
 	  
 	  public Turma () {
 		  
