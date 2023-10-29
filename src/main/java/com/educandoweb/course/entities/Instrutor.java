@@ -27,7 +27,7 @@ public class Instrutor {
 	 private Date nascimento;
 	 private Integer titulacao;
 	 
-	 @OneToMany (mappedBy =   "instrutor")
+	 @OneToMany (mappedBy ="instrutor")
 	 private List <Turma> turmas = new ArrayList<>();
 	 public Instrutor () {
 		 
