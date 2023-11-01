@@ -27,7 +27,7 @@ public class Turma {
 	  private Date dataFim;
 	  
 	  @ManyToOne
-	  @JoinColumn(name= "Id_Turma_instrutor", referencedColumnName = "id_intrutor")
+	  @JoinColumn(name= "Idinstrutor_turma", referencedColumnName = "id_intrutor")
 	  private List <Instrutor> instrutor = new ArrayList<>();
 	  
 	  public Turma () {
